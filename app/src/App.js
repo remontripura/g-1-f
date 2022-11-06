@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
 
-  const [waiting, setWaiting] = useState(false);
+
   const [walletConnected, setWalletConnected] = useState(false);
   const [ZCDUserBalance, setZCDUserBalance] = useState(0);
   const web3modal = useRef();
@@ -107,9 +107,9 @@ function App() {
       setDisableButton(true);
     } else {
       const signer = await getProviderOrSigner(true);
-      setWaiting(true);
+      
       await withdrawToken(signer);
-      setWaiting(false);
+      
       await getZCDamount();
     }
     } catch (err) {
