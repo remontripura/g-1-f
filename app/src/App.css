@@ -66,3 +66,16 @@ button:disabled{
   min-width: 100%;
   min-height: 100%;
 }
+
+@media only screen and (max-width: 600px) {
+  button {
+    width: 20%;
+    padding: 1rem;
+    padding-bottom: 1rem;
+  }
+  .connect-button {
+    width: 20%;
+    padding: 1rem;
+    padding-bottom: 1rem;
+  }
+}
