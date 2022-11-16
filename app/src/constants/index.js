@@ -1,4 +1,4 @@
-export const FAUCET_CONTRACT_ADDRESS = "0x1a66fF1CD949dF4B712B7402D98B6B4Bdf5eBD23";
+export const FAUCET_CONTRACT_ADDRESS = "0xe4cAa60EbED2cCaAac4FD2A498ad5Cbceb86CfcC";
 export const FAUCET_CONTRACT_ABI = [
   {
     "inputs": [
