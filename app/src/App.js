@@ -10,7 +10,7 @@ function App() {
   const [walletConnected, setWalletConnected] = useState(false);
   const [ZCDUserBalance, setZCDUserBalance] = useState(0);
   const web3modal = useRef();
-  const [warning, setWarning] = useState(null);
+  const [disclaimer, setDisclaimer] = useState(null);
   const [disableButton, setDisableButton] = useState(false);
   const getZCDBalance = async (provider , address) => {
     try {
@@ -102,13 +102,15 @@ function App() {
 
   const withdraw = async () => {
     try {
-    if (utils.formatEther(ZCDUserBalance) > 24) {
-      setWarning("dont greed, you have enough tokens");
+    if (utils.formatEther(ZCDUserBalance) >= 24) {
+      setDisclaimer("dont greed, you have enough tokens");
       setDisableButton(true);
     } else {
       const signer = await getProviderOrSigner(true);
       
       await withdrawToken(signer);
+
+      setDisclaimer("you will recieve 24 ZCD in a few moments. token contract address: 0x7f0Ed920Ed6b5bd1fBFd5Ab6b46DE777997468A5")
       
       await getZCDamount();
     }
@@ -126,13 +128,13 @@ function App() {
       </h1>
 
     <div className="buttons">
-      {walletConnected ? <button onClick={withdraw} className="withdraw-button" disabled={disableButton}>withdraw</button> :  
+      {walletConnected ? <button onClick={withdraw} className="withdraw-button" disabled={disableButton}>give me ZCD</button> :  
          <button onClick={connectWallet} className="connect-button" > Connect Wallet </button>}
     </div>
 
-    <div className="warning">
-      <p className="warning-message">
-      {warning == "" ? "" : warning}
+    <div className="disclaimer">
+      <p className="disclaimer-message">
+      {disclaimer == "" ? "" : disclaimer}
       </p>
     </div>
     <div className="balance">

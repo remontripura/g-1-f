@@ -48,13 +48,18 @@ button:disabled{
 }
 
 
-.warning {
+.disclaimer {
   text-align: center;
   margin-top: 1rem;
+  width: 40%;
+  height: 30%;
+  line-height: 2rem;
+  
 }
-.warning-message {
+.disclaimer-message {
   color: red;
   font-weight: bold;
+  font-family: sans-serif;
 }
 
 .faucet-div {
