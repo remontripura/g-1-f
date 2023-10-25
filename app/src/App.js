@@ -121,10 +121,10 @@ function App() {
 
 
   return (
-    <div className="App" style={{ backgroundImage: `url("https://i.ibb.co/JxyGpnR/web3.png")`, backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover" }} >
+    <div className="App" style={{ backgroundImage: `url("https://i.ibb.co/9vwm07M/web.png")`, backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover" }} >
 
       <h1 className="title">
-        Welcome to ZCD-Faucet!
+        Welcome to Gameum Faucet!
       </h1>
 
       <div className="buttons">
@@ -138,7 +138,7 @@ function App() {
         </p>
       </div>
       <div className="balance">
-        You have {utils.formatEther(ZCDUserBalance)} ZCD
+        You have {utils.formatEther(ZCDUserBalance)} G1
       </div>
 
       {/* <div className="faucet-div">
