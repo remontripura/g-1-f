@@ -1,7 +1,7 @@
-import {Contract, providers, utils} from "ethers";
+import { Contract, providers, utils } from "ethers";
 import { useRef, useState, useEffect } from "react";
 import Web3Modal from "web3modal";
-import {TOKEN_CONTRACT_ADDRESS, TOKEN_CONTRACT_ABI, FAUCET_CONTRACT_ADDRESS, FAUCET_CONTRACT_ABI} from "./constants";
+import { TOKEN_CONTRACT_ADDRESS, TOKEN_CONTRACT_ABI, FAUCET_CONTRACT_ADDRESS, FAUCET_CONTRACT_ABI } from "./constants";
 import './App.css';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
   const web3modal = useRef();
   const [disclaimer, setDisclaimer] = useState(null);
   const [disableButton, setDisableButton] = useState(false);
-  const getZCDBalance = async (provider , address) => {
+  const getZCDBalance = async (provider, address) => {
     try {
       const tokenContract = new Contract(
         TOKEN_CONTRACT_ADDRESS,
@@ -25,13 +25,13 @@ function App() {
       console.log(err);
     }
   }
-  
+
   const getZCDamount = async () => {
     try {
       const provider = await getProviderOrSigner(false);
       const signer = await getProviderOrSigner(true);
       const address = await signer.getAddress();
-      
+
       const _zcdBlanace = await getZCDBalance(provider, address);
       setZCDUserBalance(_zcdBlanace);
     } catch (err) {
@@ -93,7 +93,7 @@ function App() {
         FAUCET_CONTRACT_ABI,
         signer
       );
-      let tx = faucetContract.withdraw({gasLimit: 100000});
+      let tx = faucetContract.withdraw({ gasLimit: 100000 });
       await tx.wait();
     } catch (err) {
       console.log(err);
@@ -102,18 +102,18 @@ function App() {
 
   const withdraw = async () => {
     try {
-    if (utils.formatEther(ZCDUserBalance) >= 24) {
-      setDisclaimer("dont greed, you have enough tokens");
-      setDisableButton(true);
-    } else {
-      const signer = await getProviderOrSigner(true);
-      
-      await withdrawToken(signer);
+      if (utils.formatEther(ZCDUserBalance) >= 24) {
+        setDisclaimer("dont greed, you have enough tokens");
+        setDisableButton(true);
+      } else {
+        const signer = await getProviderOrSigner(true);
 
-      setDisclaimer("you will recieve 24 ZCD in a few moments. token contract address: 0x7f0Ed920Ed6b5bd1fBFd5Ab6b46DE777997468A5")
-      
-      await getZCDamount();
-    }
+        await withdrawToken(signer);
+
+        setDisclaimer("you will recieve 24 ZCD in a few moments. token contract address: 0x7f0Ed920Ed6b5bd1fBFd5Ab6b46DE777997468A5")
+
+        await getZCDamount();
+      }
     } catch (err) {
       console.log(err);
     }
@@ -121,29 +121,29 @@ function App() {
 
 
   return (
-    <div className="App">
-      
-      <h1>
+    <div className="App" style={{ backgroundImage: `url("https://i.ibb.co/JxyGpnR/web3.png")`, backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover" }} >
+
+      <h1 className="title">
         Welcome to ZCD-Faucet!
       </h1>
 
-    <div className="buttons">
-      {walletConnected ? <button onClick={withdraw} className="withdraw-button" disabled={disableButton}>give me ZCD</button> :  
-         <button onClick={connectWallet} className="connect-button" > Connect Wallet </button>}
-    </div>
+      <div className="buttons">
+        {walletConnected ? <button onClick={withdraw} className="withdraw-button" disabled={disableButton}>give me ZCD</button> :
+          <button onClick={connectWallet} className="connect-button" > Connect Wallet </button>}
+      </div>
 
-    <div className="disclaimer">
-      <p className="disclaimer-message">
-      {disclaimer == "" ? "" : disclaimer}
-      </p>
-    </div>
-    <div className="balance">
-     You have {utils.formatEther(ZCDUserBalance)} ZCD
-     </div>
+      <div className="disclaimer">
+        <p className="disclaimer-message">
+          {disclaimer == "" ? "" : disclaimer}
+        </p>
+      </div>
+      <div className="balance">
+        You have {utils.formatEther(ZCDUserBalance)} ZCD
+      </div>
 
-    <div className="faucet-div">
+      {/* <div className="faucet-div">
       <img src="https://t3.ftcdn.net/jpg/03/88/93/22/360_F_388932211_RuO271Qr1diwiSptd2Ncnd7TC3N3O5cg.jpg" id="faucet" />
-    </div>
+    </div> */}
     </div>
   );
 }
