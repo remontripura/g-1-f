@@ -128,7 +128,7 @@ function App() {
       </h1>
 
       <div className="buttons">
-        {walletConnected ? <button onClick={withdraw} className="withdraw-button" disabled={disableButton}>give me ZCD</button> :
+        {walletConnected ? <button onClick={withdraw} className="withdraw-button" disabled={disableButton}>give me G1</button> :
           <button onClick={connectWallet} className="connect-button" > Connect Wallet </button>}
       </div>
 

@@ -1,8 +1,9 @@
 .App {
   width: 100%;
-  height: 100%;
+  height: 700px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
   background-color: rgb(255, 255, 255);
@@ -12,13 +13,14 @@ h1 {
   margin-top: 2rem;
 }
 button {
-  width: 10%;
+  width: auto;
   padding: 1rem;
   padding-bottom: 1rem;
   background-color: rgb(80, 151, 221);
   color: white;
   border: none;
   border-radius: 0.8rem;
+  height: 50px;
 }
 button:hover {
   cursor: pointer;
@@ -68,7 +70,7 @@ button:disabled {
 
 @media only screen and (max-width: 600px) {
   button {
-    width: 20%;
+    width: auto;
     padding: 1rem;
     padding-bottom: 1rem;
   }
