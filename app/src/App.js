@@ -119,31 +119,61 @@ function App() {
     }
   }
 
-
+  const [menu, setmenu] = useState();
+  const handleMenu = () => {
+    setmenu(!menu);
+  }
   return (
-    <div className="App" style={{ backgroundImage: `url("https://i.ibb.co/9vwm07M/web.png")`, backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover" }} >
-
-      <h1 className="title">
-        Welcome to Gameum Faucet!
-      </h1>
-
-      <div className="buttons">
-        {walletConnected ? <button onClick={withdraw} className="withdraw-button" disabled={disableButton}>give me G1</button> :
-          <button onClick={connectWallet} className="connect-button" > Connect Wallet </button>}
+    <div style={{ backgroundImage: `url("https://i.ibb.co/9vwm07M/web.png")`, backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover" }} >
+      <div className="main-div">
+        <div className="sub-div">
+          <div className="logo">
+            Gameum
+          </div>
+          <div className="item">
+            <div className="menu">
+              <ul className="menu-item">
+                <li>Home</li>
+                <li>Contact</li>
+                <li>Service</li>
+                <li>About</li>
+              </ul>
+            </div>
+            <div className="icon-div">
+              <img onClick={handleMenu} className="icon" src="https://i.ibb.co/jy2yFp6/menu.png" />
+              {menu && <ul className="dropdown-item">
+              <li>Home</li>
+              <li>Contact</li>
+              <li>Service</li>
+              <li>About</li>
+            </ul>}
+            </div>
+          </div>
+        </div>
       </div>
+      <div className="App">
+        <h1 className="title">
+          Welcome to Gameum Faucet!
+        </h1>
 
-      <div className="disclaimer">
-        <p className="disclaimer-message">
-          {disclaimer == "" ? "" : disclaimer}
-        </p>
-      </div>
-      <div className="balance">
-        You have {utils.formatEther(ZCDUserBalance)} G1
-      </div>
+        <div className="buttons">
+          {walletConnected ? <button onClick={withdraw} className="withdraw-button" disabled={disableButton}>give me G1</button> :
+            <button onClick={connectWallet} className="connect-button" > Connect Wallet </button>}
+        </div>
 
-      {/* <div className="faucet-div">
+        <div className="disclaimer">
+          <p className="disclaimer-message">
+            {disclaimer == "" ? "" : disclaimer}
+          </p>
+        </div>
+        <div className="balance">
+          You have {utils.formatEther(ZCDUserBalance)} G1
+        </div>
+
+        {/* <div className="faucet-div">
       <img src="https://t3.ftcdn.net/jpg/03/88/93/22/360_F_388932211_RuO271Qr1diwiSptd2Ncnd7TC3N3O5cg.jpg" id="faucet" />
     </div> */}
+      </div>
     </div>
   );
 }
