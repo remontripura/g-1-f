@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import Web3Modal from "web3modal";
 import { TOKEN_CONTRACT_ADDRESS, TOKEN_CONTRACT_ABI, FAUCET_CONTRACT_ADDRESS, FAUCET_CONTRACT_ABI } from "./constants";
 import './App.css';
+import Footer from "./Footer";
 
 function App() {
 
@@ -174,6 +175,7 @@ function App() {
       <img src="https://t3.ftcdn.net/jpg/03/88/93/22/360_F_388932211_RuO271Qr1diwiSptd2Ncnd7TC3N3O5cg.jpg" id="faucet" />
     </div> */}
       </div>
+      <Footer/>
     </div>
   );
 }
