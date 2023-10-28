@@ -45,9 +45,9 @@ const Footer = () => {
     },
   ];
   return (
-    <div className="relative px-[10px]">
+    <div className="relative px-[10px] ">
       <div className=" footer after:absolute  after:top-0 after:w-[100%]  after:h-[100%] after:bg-transparentLayer">
-        <div className="container text-white relative z-10 py-4  flex flex-col md:flex-row gap-y-5 gap-x-3">
+        <div className="container text-white relative z-10 py-4  mx-auto flex flex-col md:flex-row gap-y-5 gap-x-3">
           <div className="md:flex  w-[100%]">
             <div className="w-full h-full md:w-[30%] xs:mb-{[]} sm:mb-5 md:mb-0">
               <img
@@ -105,7 +105,7 @@ const Footer = () => {
         </div>
         <div className="container relative z-10 text-white pb-3 ">
           <hr className="mt-0 mb-3 relative z-10 bg-white" />
-          <h6 className="font-normal flex items-center gap-x-2">
+          <h6 className="font-normal flex items-center gap-x-2 text-center justify-center ">
             Mindchain <AiOutlineCopyrightCircle className="w-[20px] h-auto"/> 2023
           </h6>
         </div>
