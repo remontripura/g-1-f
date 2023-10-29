@@ -129,7 +129,7 @@ function App() {
       <div className="main-div">
         <div className="sub-div">
           <div className="logo">
-            Gameum
+            <img className="icon" src="https://i.postimg.cc/50qPhwnt/Mask-group.png" style={{ width: "150px" }} />
           </div>
           <div className="item">
             <div className="menu">
@@ -139,17 +139,19 @@ function App() {
                 <li>Service</li>
                 <li>About</li>
               </ul>
+              <button className="connect-button">Connect Wallet</button>
             </div>
             <div className="icon-div">
               <img onClick={handleMenu} className="icon" src="https://i.ibb.co/jy2yFp6/menu.png" />
               {menu && <ul className="dropdown-item">
-              <li>Home</li>
-              <li>Contact</li>
-              <li>Service</li>
-              <li>About</li>
-            </ul>}
+                <li>Home</li>
+                <li>Contact</li>
+                <li>Service</li>
+                <li>About</li>
+              </ul>}
             </div>
           </div>
+          
         </div>
       </div>
       <div className="App">
@@ -175,7 +177,7 @@ function App() {
       <img src="https://t3.ftcdn.net/jpg/03/88/93/22/360_F_388932211_RuO271Qr1diwiSptd2Ncnd7TC3N3O5cg.jpg" id="faucet" />
     </div> */}
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

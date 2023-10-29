@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useSyncExternalStore } from "react";
 // import "./footer.css";
 // import CommonButton from "../common button/CommonButton";
-import { BiMoon, BiSun } from "react-icons/bi";
+// import { BiMoon, BiSun } from "react-icons/bi";
 // import { useDispatch, useSelector } from "react-redux";
 // import { themeData } from "../../Slices/ThemeSlice";
 import { Dropdown } from "react-bootstrap";

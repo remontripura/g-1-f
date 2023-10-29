@@ -97,7 +97,6 @@ button:disabled {
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
   .menu {
     display: flex;
-    color: black;
   }
   .icon-div {
     display: none;
@@ -116,7 +115,6 @@ button:disabled {
   color: white;
 }
 .main-div {
-  color: red;
   width: 100%;
 }
 .sub-div {
@@ -126,12 +124,24 @@ button:disabled {
   justify-content: space-between;
   align-items: center;
   padding: 12px;
-  background-color: aliceblue;
 }
 .menu-item {
   list-style: none;
   display: flex;
   justify-content: space-around;
+  gap: 14px;
+}
+.menu-item li{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  padding: 5px;
+  font-weight: 500;
+}
+.menu-item li:hover{
+  background-color: #079CE0;
 }
 .logo {
   width: 30%;
@@ -139,7 +149,7 @@ button:disabled {
   font-weight: 600;
 }
 .item {
-  width: 30%;
+  width: 40%;
   display: flex;
   justify-content: end;
 }
@@ -149,4 +159,14 @@ button:disabled {
 .dropdown-item{
   list-style: none;
   position: absolute;
+}
+.connect-button{
+  width: 200px;
+  padding: 2px 8px;
+  height: 50px;
+  margin-left: 25px;
+  font-weight: 700;
+}
+.connect-button:hover{
+  background-color: black;
 }
