@@ -30,7 +30,7 @@ const Footer = () => {
   // };
   let footerLists = [
     {
-      title: "Mindchain",
+      title: "Gameum",
       links: [
         { title: "Terms", url: "http://example.com/link1" },
         { title: "Privacy", url: "http://example.com/link2" },
@@ -61,8 +61,8 @@ const Footer = () => {
               />
               <div className="mb-4">
                 <small className="font-normal ">
-                  Mindchain Scan is a Block Explorer and Analytics <br />{" "}
-                  Platform for Core Mindchain
+                  Gameum Scan is a Block Explorer and Analytics <br />{" "}
+                  Platform for Core Gameum
                 </small>
               </div>
               <div className="flex gap-x-2">
@@ -107,7 +107,7 @@ const Footer = () => {
         <div className="container relative z-10 text-white pb-3 ">
           <hr className="mt-0 mb-3 relative z-10 bg-white" />
           <h6 className="font-normal flex items-center gap-x-2 text-center justify-center ">
-            Mindchain <AiOutlineCopyrightCircle className="w-[20px] h-auto"/> 2023
+            Gameum <AiOutlineCopyrightCircle className="w-[20px] h-auto"/> 2023
           </h6>
         </div>
       </div>
