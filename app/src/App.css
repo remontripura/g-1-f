@@ -208,3 +208,7 @@ button:disabled {
 .connect-button:hover{
   background-color: black;
 }
+.withdraw-button{
+  display: flex;
+  align-items: center;
+}
