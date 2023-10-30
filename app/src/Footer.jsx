@@ -8,6 +8,7 @@ import { Dropdown } from "react-bootstrap";
 // import { footerLists } from "./footerData";
 import { Link } from "react-router-dom";
 import { AiOutlineCopyrightCircle } from "react-icons/ai";
+import logo from "../src/image/logo.png"
 
 const Footer = () => {
   const [signInShow, setSignInShow] = useState(false);
@@ -51,7 +52,7 @@ const Footer = () => {
           <div className="md:flex  w-[100%]">
             <div className="w-full h-full md:w-[30%] xs:mb-{[]} sm:mb-5 md:mb-0">
               <img
-                src="https://i.postimg.cc/50qPhwnt/Mask-group.png"
+                src={logo}
                 className={
                   !signInShow
                     ? "w-[150px] h-auto mb-1"

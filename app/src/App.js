@@ -4,6 +4,8 @@ import Web3Modal from "web3modal";
 import { TOKEN_CONTRACT_ADDRESS, TOKEN_CONTRACT_ABI, FAUCET_CONTRACT_ADDRESS, FAUCET_CONTRACT_ABI } from "./constants";
 import './App.css';
 import Footer from "./Footer";
+import logo from "../src/image/logo.png";
+import backgroundImage from "../src/image/background.png";
 
 function App() {
 
@@ -125,11 +127,11 @@ function App() {
     setmenu(!menu);
   }
   return (
-    <div style={{ backgroundImage: `url("https://i.ibb.co/9vwm07M/web.png")`, backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover" }} >
+    <div style={{ backgroundImage: `url(${backgroundImage})`, backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover" }} >
       <div className="main-div">
         <div className="sub-div">
           <div className="logo">
-            <img className="icon" src="https://i.postimg.cc/50qPhwnt/Mask-group.png" style={{ width: "150px" }} />
+            <img className="icon" src={logo} style={{ width: "150px" }} />
           </div>
           <div className="item">
             <div className="menu">
