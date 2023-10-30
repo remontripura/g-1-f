@@ -120,7 +120,7 @@ function App() {
     }
   }
 
-  const [menu, setmenu] = useState();
+  const [menu, setmenu] = useState(true);
   const handleMenu = () => {
     setmenu(!menu);
   }
@@ -142,16 +142,18 @@ function App() {
               <button className="connect-button">Connect Wallet</button>
             </div>
             <div className="icon-div">
-              <img onClick={handleMenu} className="icon" src="https://i.ibb.co/jy2yFp6/menu.png" />
-              {menu && <ul className="dropdown-item">
-                <li>Home</li>
-                <li>Contact</li>
-                <li>Service</li>
-                <li>About</li>
-              </ul>}
+              <img onClick={handleMenu} className="icon" src="https://i.ibb.co/939zRcw/menu.png" />
+              <div className="dropdown">
+                {menu && <ul className="dropdown-item">
+                  <li>Home</li>
+                  <li>Contact</li>
+                  <li>Service</li>
+                  <li>About</li>
+                </ul>}
+              </div>
             </div>
           </div>
-          
+
         </div>
       </div>
       <div className="App">

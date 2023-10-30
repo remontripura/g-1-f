@@ -81,6 +81,9 @@ button:disabled {
     padding-bottom: 1rem;
     /* height: 10px; */
   }
+  .item{
+    width: 100%;
+  }
   .menu-item {
     display: none;
   }
@@ -88,11 +91,15 @@ button:disabled {
     display: flex;
     flex-direction: column;
     justify-content: end;
+    align-items: end;
     position: relative;
   }
   .menu {
     display: none;
   }
+ .logo{
+  position: absolute;
+ }
 }
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
   .menu {
@@ -101,6 +108,9 @@ button:disabled {
   .icon-div {
     display: none;
   }
+  .item{
+    width: 50%;
+  }
 }
 @media only screen and (min-width: 1025px) and (max-width: 2400px) {
   .menu {
@@ -108,6 +118,9 @@ button:disabled {
   }
   .icon-div {
     display: none;
+  }
+  .item{
+    width: 50%;
   }
 }
 
@@ -137,7 +150,7 @@ button:disabled {
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  padding: 5px;
+  padding: 0px;
   font-weight: 500;
 }
 .menu-item li:hover{
@@ -147,18 +160,43 @@ button:disabled {
   width: 30%;
   font-size: 24px;
   font-weight: 600;
+
 }
-.item {
+/* .item {
   width: 40%;
   display: flex;
   justify-content: end;
-}
+} */
 .icon {
   width: 25px;
 }
+.dropdown{
+  position: absolute;
+  top: 40px;
+  width: 100%;
+}
 .dropdown-item{
   list-style: none;
+  background-color: rgba(0, 0, 0, 0.811);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5px;
   position: absolute;
+}
+.dropdown-item li{
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 3px;
+  color: white;
+  transition: background-color 0.5s;
+}
+.dropdown-item li:hover{
+  background-color: #079CE0;
 }
 .connect-button{
   width: 200px;
